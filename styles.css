@@ -132,6 +132,8 @@ header h2 {
 .playlist {
   margin-top: 408px;
   padding: 12px;
+  max-height: 350px;
+  overflow-y: auto;
 }
 
 .song {
@@ -165,6 +167,18 @@ header h2 {
   background-size: cover;
   margin: 0 8px;
 }
+.playing {
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .song .body {
   flex: 1;
@@ -185,4 +199,28 @@ header h2 {
   padding: 16px 8px;
   color: #999;
   font-size: 18px;
+}
+
+/* Volume Control */
+.volume-vertical {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  padding: 8px 4px;
+  border-radius: 8px;
+}
+
+.volume-vertical i {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.volume-range-vertical {
+  -webkit-appearance: slider-vertical;
+  width: 30px;
+  height: 120px;
 }
